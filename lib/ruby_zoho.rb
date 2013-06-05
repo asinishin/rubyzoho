@@ -118,12 +118,12 @@ module RubyZoho
     end
 
     def method_missing(meth, *args, &block)
-      if [:seid=, :semodule=].index(meth)
+      #if [:seid=, :semodule=].index(meth)
         run_create_accessor(self.class, meth)
         self.send(meth, args[0])
-      else
-        super
-      end
+      #else
+      #  super
+      #end
     end
 
     def self.method_is_module?(str_or_sym)
